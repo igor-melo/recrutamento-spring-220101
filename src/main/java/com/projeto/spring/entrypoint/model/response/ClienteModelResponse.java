@@ -1,5 +1,7 @@
 package com.projeto.spring.entrypoint.model.response;
 
+import com.projeto.spring.datarpovider.entities.CidadeEntity;
+
 import java.util.Date;
 
 public class ClienteModelResponse {
@@ -9,9 +11,9 @@ public class ClienteModelResponse {
     private Character sexo;
     private Date nascimento;
     private Integer idade;
-    private String cidade;
+    private CidadeEntity cidade;
 
-    public ClienteModelResponse(Long id, String nomeCompleto, Character sexo, Date nascimento, Integer idade, String cidade) {
+    public ClienteModelResponse(Long id, String nomeCompleto, Character sexo, Date nascimento, Integer idade, CidadeEntity cidade) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
         this.sexo = sexo;
@@ -60,11 +62,11 @@ public class ClienteModelResponse {
         this.idade = idade;
     }
 
-    public String getCidade() {
+    public CidadeEntity getCidade() {
         return cidade;
     }
 
-    public void setCidade(String cidade) {
+    public void setCidade(CidadeEntity cidade) {
         this.cidade = cidade;
     }
 

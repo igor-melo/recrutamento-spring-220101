@@ -1,5 +1,7 @@
 package com.projeto.spring.entrypoint.model.request;
 
+import com.projeto.spring.datarpovider.entities.CidadeEntity;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -9,12 +11,12 @@ public class ClienteModelRequest implements Serializable {
     private Character sexo;
     private Date nascimento;
     private Integer idade;
-    private String cidade;
+    private CidadeEntity cidade;
 
     public ClienteModelRequest() {
     }
 
-    public ClienteModelRequest(String nomeCompleto, Character sexo, Date nascimento, Integer idade, String cidade) {
+    public ClienteModelRequest(String nomeCompleto, Character sexo, Date nascimento, Integer idade, CidadeEntity cidade) {
         this.nomeCompleto = nomeCompleto;
         this.sexo = sexo;
         this.nascimento = nascimento;
@@ -58,11 +60,11 @@ public class ClienteModelRequest implements Serializable {
         this.idade = idade;
     }
 
-    public String getCidade() {
+    public CidadeEntity getCidade() {
         return cidade;
     }
 
-    public void setCidade(String cidade) {
+    public void setCidade(CidadeEntity cidade) {
         this.cidade = cidade;
     }
 }

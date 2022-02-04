@@ -31,10 +31,10 @@ public class TestConfig implements CommandLineRunner{
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
-
-
-        ClienteEntity client1 = new ClienteEntity(null, "Igor", 'M', sdf.parse("02/03/2018"), 12, "Recife");
-        ClienteEntity client2 = new ClienteEntity(null, "Melo", 'F', sdf.parse("02/03/2018"), 13, "Recife");
+//
+//
+        ClienteEntity client1 = new ClienteEntity(null, "Igor", 'M', sdf.parse("02/03/2018"), 12, city1);
+        ClienteEntity client2 = new ClienteEntity(null, "Melo", 'F', sdf.parse("02/03/2018"), 13, city2);
         clienteRepository.saveAll(Arrays.asList(client1, client2));
 
     }

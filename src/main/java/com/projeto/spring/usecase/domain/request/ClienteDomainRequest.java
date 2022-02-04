@@ -1,5 +1,7 @@
 package com.projeto.spring.usecase.domain.request;
 
+import com.projeto.spring.datarpovider.entities.CidadeEntity;
+
 import java.util.Date;
 
 public class ClienteDomainRequest {
@@ -8,9 +10,9 @@ public class ClienteDomainRequest {
     private Character sexo;
     private Date nascimento;
     private Integer idade;
-    private String cidade;
+    private CidadeEntity cidade;
 
-    public ClienteDomainRequest(String nomeCompleto, Character sexo, Date nascimento, Integer idade, String cidade) {
+    public ClienteDomainRequest(String nomeCompleto, Character sexo, Date nascimento, Integer idade, CidadeEntity cidade) {
         this.nomeCompleto = nomeCompleto;
         this.sexo = sexo;
         this.nascimento = nascimento;
@@ -54,11 +56,11 @@ public class ClienteDomainRequest {
         this.idade = idade;
     }
 
-    public String getCidade() {
+    public CidadeEntity getCidade() {
         return cidade;
     }
 
-    public void setCidade(String cidade) {
+    public void setCidade(CidadeEntity cidade) {
         this.cidade = cidade;
     }
 }

@@ -1,5 +1,6 @@
 package com.projeto.spring.entrypoint.mapper;
 
+import com.projeto.spring.datarpovider.entities.CidadeEntity;
 import com.projeto.spring.entrypoint.model.request.ClienteModelRequest;
 import com.projeto.spring.usecase.domain.request.ClienteDomainRequest;
 
@@ -14,7 +15,7 @@ public class ClienteEntryPointDomainMapper {
                 cliente.getSexo(),
                 cliente.getNascimento(),
                 cliente.getIdade(),
-                cliente.getCidade()
+                new CidadeEntity(cliente.getCidade().getId(), cliente.getCidade().getNome(), cliente.getCidade().getEstado())
         );
     }
 }

@@ -1,13 +1,11 @@
 package com.projeto.spring.datarpovider.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
 @Entity
+@Table(name = "tb_cliente")
 public class ClienteEntity {
 
     @Id
@@ -17,12 +15,14 @@ public class ClienteEntity {
     private Character sexo;
     private Date nascimento;
     private Integer idade;
-    private String cidade;
+
+    @OneToOne//(cascade = CascadeType.ALL)
+    private CidadeEntity cidade;
 
     public ClienteEntity() {
     }
 
-    public ClienteEntity(Long id, String nomeCompleto, Character sexo, Date nascimento, Integer idade, String cidade) {
+    public ClienteEntity(Long id, String nomeCompleto, Character sexo, Date nascimento, Integer idade, CidadeEntity cidade) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
         this.sexo = sexo;
@@ -71,11 +71,11 @@ public class ClienteEntity {
         this.idade = idade;
     }
 
-    public String getCidade() {
+    public CidadeEntity getCidade() {
         return cidade;
     }
 
-    public void setCidade(String cidade) {
+    public void setCidade(CidadeEntity cidade) {
         this.cidade = cidade;
     }
 
