@@ -22,6 +22,11 @@ public class CidadeEntity {
         this.estado = estado;
     }
 
+    public CidadeEntity(String nome, String estado) {
+        this.nome = nome;
+        this.estado = estado;
+    }
+
     public Long getId() {
         return id;
     }

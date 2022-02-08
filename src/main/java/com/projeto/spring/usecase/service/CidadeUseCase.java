@@ -1,5 +1,6 @@
 package com.projeto.spring.usecase.service;
 
+import com.projeto.spring.usecase.domain.request.CidadeDomainRequest;
 import com.projeto.spring.usecase.domain.response.CidadeDomainResponse;
 import com.projeto.spring.usecase.gateway.CidadeGateway;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,11 @@ public class CidadeUseCase {
     public Optional<List<CidadeDomainResponse>> listarCidadePorEstado(String estado){
         return cidadeGateway.listarCidadePorEstado(estado);
     }
+
+    public void inserirCidade(CidadeDomainRequest cidade) {
+        cidadeGateway.inserirCidade(cidade);
+    }
+
 
 
 }

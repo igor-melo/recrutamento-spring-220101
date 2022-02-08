@@ -1,7 +1,9 @@
 package com.projeto.spring.entrypoint.controller;
 
 
+import com.projeto.spring.entrypoint.mapper.CidadeEntryPointDomainMapper;
 import com.projeto.spring.entrypoint.mapper.CidadeEntryPointModelMapper;
+import com.projeto.spring.entrypoint.model.request.CidadeModelRequest;
 import com.projeto.spring.entrypoint.model.response.CidadeModelResponse;
 import com.projeto.spring.usecase.domain.response.CidadeDomainResponse;
 import com.projeto.spring.usecase.service.CidadeUseCase;
@@ -32,5 +34,12 @@ public class CidadeController {
                 cidadeUseCase.listarCidadePorEstado(estado);
         return ResponseEntity.ok().body(CidadeEntryPointModelMapper.toCidadeModelResponse(objResponse.get()));
     }
+
+    @PostMapping
+    public ResponseEntity<Void> inserir(@RequestBody CidadeModelRequest cidade) {
+        cidadeUseCase.inserirCidade(CidadeEntryPointDomainMapper.toDomain(cidade));
+        return ResponseEntity.noContent().build();
+    }
+
 
 }

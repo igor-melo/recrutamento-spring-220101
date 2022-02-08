@@ -2,6 +2,7 @@ package com.projeto.spring.datarpovider.implementation;
 
 import com.projeto.spring.datarpovider.mapper.CidadeDataProviderMapper;
 import com.projeto.spring.datarpovider.repository.CidadeRepository;
+import com.projeto.spring.usecase.domain.request.CidadeDomainRequest;
 import com.projeto.spring.usecase.domain.response.CidadeDomainResponse;
 import com.projeto.spring.usecase.gateway.CidadeGateway;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,4 +25,11 @@ public class CidadeDataProvider implements CidadeGateway {
     public Optional<List<CidadeDomainResponse>> listarCidadePorEstado(String estado) {
         return cidadeRepository.findByEstadoIgnoreCase(estado).map(CidadeDataProviderMapper::toCidadeDomain);
     }
+
+    @Override
+    public void inserirCidade(CidadeDomainRequest cidade) {
+        cidadeRepository.save(CidadeDataProviderMapper.toCidadeEntity(cidade));
+    }
+
+
 }

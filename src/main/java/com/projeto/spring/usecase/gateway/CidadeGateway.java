@@ -1,5 +1,6 @@
 package com.projeto.spring.usecase.gateway;
 
+import com.projeto.spring.usecase.domain.request.CidadeDomainRequest;
 import com.projeto.spring.usecase.domain.response.CidadeDomainResponse;
 
 import java.util.List;
@@ -10,4 +11,5 @@ public interface CidadeGateway {
     Optional<List<CidadeDomainResponse>> listarCidadePorNome(String nome);
     Optional<List<CidadeDomainResponse>> listarCidadePorEstado(String estado);
 
+    void inserirCidade(CidadeDomainRequest cidade);
 }
